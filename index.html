@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Boilerplate</title>
+        <link rel="stylesheet" href="css/style.min.css">
+
+        <script src="js/jquery.3.4.1.min.js"></script>
+
+        <!-- Owl 2 JS -->
+        <!-- <script src="js/owl.carousel.min.js" charset="utf-8"></script> -->
+        <script src="js/scripts.js"></script>
+    </head>
+    <body>
+        <img src="img/example.png" alt="">
+        <hr>
+        <button class="build">Build</button>
+        <div class="output"><pre><code>code will appear here</code></pre></div>
+
+
+        <h2>Yarn</h2>
+        <div id="has_yotm" class="dump"><ul></ul></div>
+
+        <h2>Fabric</h2>
+        <div id="has_fotm" class="dump"><ul></ul></div>
+
+        <h2>Beads</h2>
+        <div id="has_botm" class="dump"><ul></ul></div>
+
+        <h2>Socks</h2>
+        <div id="has_sotm" class="dump"><ul></ul></div>
+
+        <h2>Skirts</h2>
+        <div id="has_skotm" class="dump"><ul></ul></div>
+
+
+        <script type="text/javascript">
+            $(function(){
+
+                $('.build').on('click',function(){
+                    var obj = {};
+
+                    $('input').each(function(i,item){
+                        var name = item.name;
+                        if ($(this).is(':checked')) {
+                            if (obj[name] == undefined) {
+                                obj[name] = {};
+                            }
+                            obj[name][$(this).val().toString()] = true;
+                        }
+                    });
+
+                    $('.output pre code').text(JSON.stringify(obj, null, 1));
+                });
+
+                $('.dump').each(function(){
+                    var el = $(this);
+                    var ul = el.children('ul');
+                    var id = el.attr('id');
+
+                    ul.append('<li><label>Has Box(es):</label></li>');
+
+                    for (var i = 1; i < 25; i++) {
+                        ul.append('<li>\
+                            <input type="checkbox" value="box'+i+'" name="'+id+'" id="'+id+'_'+i+'" />\
+                            <label for="'+id+'_'+i+'">'+i+'</label>\
+                        </li>')
+                    }
+                });
+
+            });
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,73 @@
+@charset "UTF-8";
+@import '../font/turbo.scss';
+
+// OWL
+// @import "owl.carousel.min.scss";
+// @import "owl.theme.default.scss";
+
+*{box-sizing:border-box;}
+html,body{margin:0;font-family:'Arial';}
+.cf,.clear,.clearfix{clear:both;}
+div{float:left;display:block;width:100%;}
+
+
+body{
+    padding: 50px 10%;
+}
+h2{
+    margin: 30px 0 0 0;
+    padding: 0;
+    float:left;
+    padding: 3px;
+}
+ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    // border:1px solid #888;
+    float:left;
+}
+li{
+    margin: 3px;
+    float:left;
+    display:block;
+
+}
+label{
+    text-align: center;
+    min-width:60px;
+    display:block;
+    padding: 12px 18px;
+    border:1px solid #888;
+}
+li:first-child{
+    width:100%;
+}
+li:first-child label{
+    border:none;
+
+    text-align: left;
+    padding-left:0;
+    padding-top:5px;
+}
+
+input:checked + label{
+    background:#d7ebbb;
+    border:1px solid green;
+}
+
+input{display:none;}
+
+.output{
+    margin: 20px 0 0 0;
+    padding: 20px 50px;
+    background:#eee;
+}
+pre,code{
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
